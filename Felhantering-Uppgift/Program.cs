@@ -10,30 +10,28 @@ namespace Felhantering_Uppgift
     {
         static void Main(string[] args)
         {
-
-            
-
-
-            Console.Write("Mata in start ");
-            string startInput = Console.ReadLine();
-            Console.Write("Mata in stop ");
-            string stopInput = Console.ReadLine();
-            Console.Write("Mata in steg ");
-            string stepInput = Console.ReadLine();
-
-            if (int.TryParse(startInput, out int start) && int.TryParse(stopInput, out int stop) && int.TryParse(stepInput, out int step))
+            bool done = false;
+            while (!done)
             {
+                Console.Clear();
 
-                for (int i = start; i <= stop; i+= step)
+                Console.Write("Mata in start ");
+                string startInput = Console.ReadLine();
+                Console.Write("Mata in stop ");
+                string stopInput = Console.ReadLine();
+                Console.Write("Mata in steg ");
+                string stepInput = Console.ReadLine();
+
+                if (int.TryParse(startInput, out int start) && int.TryParse(stopInput, out int stop) && int.TryParse(stepInput, out int step))
                 {
-                    Console.Write(i + " ");
+                    for (int i = start; i <= stop; i += step)
+                    {
+                        done = true;
+                        Console.Write(i + " ");
+                    }
                 }
             }
-
             Console.ReadLine();
-
-
-
         }
     }
 }
