@@ -13,22 +13,26 @@ namespace Felhantering_Uppgift
             bool done = false;
             while (!done)
             {
-                Console.Clear();
-
-                Console.Write("Mata in start ");
-                string startInput = Console.ReadLine();
-                Console.Write("Mata in stop ");
-                string stopInput = Console.ReadLine();
-                Console.Write("Mata in steg ");
-                string stepInput = Console.ReadLine();
-
-                if (int.TryParse(startInput, out int start) && int.TryParse(stopInput, out int stop) && int.TryParse(stepInput, out int step))
+                try
                 {
+                    Console.Clear();
+
+                    Console.Write("Mata in start ");
+                    int start = int.Parse(Console.ReadLine());
+                    Console.Write("Mata in stop ");
+                    int stop = int.Parse(Console.ReadLine());
+                    Console.Write("Mata in steg ");
+                    int step = int.Parse(Console.ReadLine());
+
                     for (int i = start; i <= stop; i += step)
                     {
                         done = true;
                         Console.Write(i + " ");
                     }
+                }
+                catch (Exception e)
+                {
+
                 }
             }
             Console.ReadLine();
