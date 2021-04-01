@@ -24,15 +24,19 @@ namespace Felhantering_Uppgift
                     Console.Write("Mata in steg ");
                     int step = int.Parse(Console.ReadLine());
 
-                    for (int i = start; i <= stop; i += step)
+                    if (step > 0)
                     {
-                        done = true;
-                        Console.Write(i + " ");
+                        for (int i = start; i <= stop; i += step)
+                        {
+                            done = true;
+                            Console.Write(i + " ");
+                        }
                     }
                 }
                 catch (Exception e)
                 {
-
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
                 }
             }
             Console.ReadLine();
